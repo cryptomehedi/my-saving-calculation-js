@@ -8,6 +8,7 @@ const calculatorButton = document.querySelector('#calculator-button');
 const saveButton = document.querySelector('#save-button');
 const restValue = document.querySelector('#rest-balance');
 
+// *calculation button
 calculatorButton.addEventListener('click',function(){
     // *text to number convert
     const incomeInputNum = parseInt(incomeInput.value) ;
@@ -23,9 +24,15 @@ calculatorButton.addEventListener('click',function(){
     restValue.innerText = restBalance;
 });
 
-
+// *saving button 
 saveButton.addEventListener('click',function(){
+    // *text to number convert
     const incomeInputNum = parseInt(incomeInput.value) 
     const saveInputNum = parseInt(saveInput.value);
+    // *percentage calculation
     savePercentage = saveInputNum / 100;
+    // *saving amount calculation 
+    const savingAmount = incomeInputNum * savePercentage;
+    document.querySelector('#saving-amount').innerText = savingAmount;
+
 });
