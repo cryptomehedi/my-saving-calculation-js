@@ -16,15 +16,30 @@ calculatorButton.addEventListener('click',function(){
     const foodInputNum = parseInt(foodInput.value);
     const rentInputNum = parseInt(rentInput.value);
     const clothesInputNum = parseInt(clothesInput.value);
-
     if( incomeInputNum >= 0 && foodInputNum >= 0 && rentInputNum >= 0 && clothesInputNum >= 0){
         // *total cost calculation
         const totalCost = foodInputNum + rentInputNum + clothesInputNum;
+        if(totalCost <= incomeInputNum ){
         document.querySelector('#total-cost').innerText = totalCost;
         // *rest balance 
         const restBalance = incomeInputNum - totalCost;
         restValue.innerText = restBalance;
-    }else{
+        displayAlert('');
+        }else{
+            document.querySelector('#total-cost').innerText = 0;
+            restValue.innerText = 0;
+            displayAlert('Your Expenses Is More Then Your Income');
+        }
+    }else if(incomeInputNum <= 0 || incomeInput.value =='' || isNaN(incomeInput.value)){
+        displayAlert('please put valid Income amount');
+    }else if(foodInputNum <= 0 || foodInput.value =='' || isNaN(foodInput.value)){
+        displayAlert('please put valid Food amount');
+    }else if(rentInputNum<= 0 || rentInput.value =='' || isNaN(rentInput.value)){
+        displayAlert('please put valid Rent amount');
+    }else if(clothesInputNum <= 0 || clothesInput.value =='' || isNaN(clothesInput.value)){
+        displayAlert('please put valid Cloth amount');
+    }
+    else{
         displayAlert('please put valid amount');
     }
 });
@@ -44,12 +59,9 @@ saveButton.addEventListener('click',function(){
     document.querySelector('#remaining-balance').innerText = remainingBalance;
 });
 
+// * display alert 
 function displayAlert(text) {
     alert.textContent = text;
-    // remove alert
-    setTimeout(function () {
-    alert.textContent = "";
-    }, 2000);
 }
 
 
