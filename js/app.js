@@ -16,12 +16,15 @@ calculatorButton.addEventListener('click',function(){
     const rentInputNum = parseInt(rentInput.value);
     const clothesInputNum = parseInt(clothesInput.value);
 
-    // *total cost calculation
-    const totalCost = foodInputNum + rentInputNum + clothesInputNum;
-    document.querySelector('#total-cost').innerText = totalCost;
-    // *rest balance 
-    const restBalance = incomeInputNum - totalCost;
-    restValue.innerText = restBalance;
+    if( incomeInputNum >= 0 && foodInputNum >= 0 && rentInputNum >= 0 && clothesInputNum >= 0){
+        // *total cost calculation
+        const totalCost = foodInputNum + rentInputNum + clothesInputNum;
+        document.querySelector('#total-cost').innerText = totalCost;
+        // *rest balance 
+        const restBalance = incomeInputNum - totalCost;
+        restValue.innerText = restBalance;
+        }else{
+    }
 });
 
 // *saving button 
@@ -38,3 +41,9 @@ saveButton.addEventListener('click',function(){
     const remainingBalance = restValue.innerText - savingAmount;
     document.querySelector('#remaining-balance').innerText = remainingBalance;
 });
+
+
+
+function l(a){
+    console.log(a);
+};
