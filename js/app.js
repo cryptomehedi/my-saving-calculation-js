@@ -53,10 +53,16 @@ saveButton.addEventListener('click',function(){
     savePercentage = saveInputNum / 100;
     // *saving amount calculation 
     const savingAmount = incomeInputNum * savePercentage;
-    document.querySelector('#saving-amount').innerText = savingAmount;
-    // *remaining balance calculation
     const remainingBalance = restValue.innerText - savingAmount;
-    document.querySelector('#remaining-balance').innerText = remainingBalance;
+    if( remainingBalance < 0 ){
+        displayAlert('Your Saving is Less then Your Expenses');
+        document.querySelector('#saving-amount').innerText = 0;
+        document.querySelector('#remaining-balance').innerText = 0;
+    }else{
+        document.querySelector('#saving-amount').innerText = savingAmount;
+        // *remaining balance calculation
+        document.querySelector('#remaining-balance').innerText = remainingBalance;
+    }
 });
 
 // * display alert 
