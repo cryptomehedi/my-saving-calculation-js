@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Saving Calculation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-serif	">
+    <header>
+        <h1 class="text-5xl text-center my-5">My Saving Calculation</h1>
+    </header>
+    <main class="container mx-auto bg-gray-200 ">
+        <section class="grid sm:grid-cols-1 md:grid-cols-2 gap-5">
+            <div class="">
+                <img src="./img/photo.jpg" alt="" srcset="">
+            </div>
+            <div class="">
+                <div class="text-center">
+                    <p>Income</p>
+                    <div>
+                        <label for="income">Income:</label>
+                        <input type="text" name="income" id="income-input">
+                    </div>
+                    <p>Expenses</p>
+                    <div>
+                        <label for="food">Food:</label>
+                        <input type="text" name="food" id="food-input">
+                    </div>
+                    <div>
+                        <label for="rent">Rent</label>
+                        <input type="text" name="rent" id="rent-input">
+                    </div>
+                    <div>
+                        <label for="clothes">Clothes:</label>
+                        <input type="text" name="clothes" id="clothes-input">
+                    </div>
+                    <button id="calculator-button" class="bg-sky-600 hover:bg-sky-700">Calculator</button>
+                    <p class="alert"></p>
+                    <p>Total Expenses: <span id="total-cost">0</span></p>
+                    <p>Balance: <span id="rest-balance">0</span></p>
+                    <div>
+                        <div class="">
+                            <label for="save">Save:</label>
+                            <input type="text" name="save" id="save-input">
+                            <p>%</p>
+                            <button id="save-button" class="bg-sky-600 hover:bg-sky-700" >Save</button>
+                        </div>
+                    </div>
+                    <p>Saving Amount: <span id="saving-amount">0</span> </p>
+                    <p>Remaining Balance: <span id="remaining-balance">0</span> </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+    <script src="./js/app.js"></script>
+</body>
+</html>
