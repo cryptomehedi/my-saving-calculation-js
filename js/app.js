@@ -7,6 +7,7 @@ const saveInput = document.querySelector('#save-input');
 const calculatorButton = document.querySelector('#calculator-button');
 const saveButton = document.querySelector('#save-button');
 const restValue = document.querySelector('#rest-balance');
+const alert = document.querySelector('.alert-text');
 
 // *calculation button
 calculatorButton.addEventListener('click',function(){
@@ -23,7 +24,8 @@ calculatorButton.addEventListener('click',function(){
         // *rest balance 
         const restBalance = incomeInputNum - totalCost;
         restValue.innerText = restBalance;
-        }else{
+    }else{
+        displayAlert('please put valid amount');
     }
 });
 
@@ -42,6 +44,13 @@ saveButton.addEventListener('click',function(){
     document.querySelector('#remaining-balance').innerText = remainingBalance;
 });
 
+function displayAlert(text) {
+    alert.textContent = text;
+    // remove alert
+    setTimeout(function () {
+    alert.textContent = "";
+    }, 2000);
+}
 
 
 function l(a){
