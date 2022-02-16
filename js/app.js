@@ -18,5 +18,7 @@ calculatorButton.addEventListener('click',function(){
     // *total cost calculation
     const totalCost = foodInputNum + rentInputNum + clothesInputNum;
     document.querySelector('#total-cost').innerText = totalCost;
-    
+    // *rest amount 
+    const totalExpenses = incomeInputNum - totalCost;
+    restValue.innerText = totalExpenses;
 });
