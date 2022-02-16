@@ -8,6 +8,7 @@ const calculatorButton = document.querySelector('#calculator-button');
 const saveButton = document.querySelector('#save-button');
 const restValue = document.querySelector('#rest-balance');
 const alert = document.querySelector('.alert-text');
+const alert2 = document.querySelector('.alert2-text');
 
 // *calculation button
 calculatorButton.addEventListener('click',function(){
@@ -49,19 +50,28 @@ saveButton.addEventListener('click',function(){
     // *text to number convert
     const incomeInputNum = parseInt(incomeInput.value) 
     const saveInputNum = parseInt(saveInput.value);
-    // *percentage calculation
-    savePercentage = saveInputNum / 100;
-    // *saving amount calculation 
-    const savingAmount = incomeInputNum * savePercentage;
-    const remainingBalance = restValue.innerText - savingAmount;
-    if( remainingBalance < 0 ){
-        displayAlert('Your Saving is Less then Your Expenses');
+    if(saveInputNum >= 0){
+        // *percentage calculation
+        savePercentage = saveInputNum / 100;
+        // *saving amount calculation 
+        const savingAmount = incomeInputNum * savePercentage;
+        // *remaining balance calculation
+        const remainingBalance = restValue.innerText - savingAmount;
+        if( remainingBalance < 0 ){
+            displayAlert2('Your Remaining Balance is Less then Your Saving Balance');
+            document.querySelector('#saving-amount').innerText = savingAmount;
+            
+            document.querySelector('#remaining-balance').innerText = remainingBalance;
+        }else{
+            document.querySelector('#saving-amount').innerText = savingAmount;
+            // *remaining balance calculation
+            document.querySelector('#remaining-balance').innerText = remainingBalance;
+            displayAlert2('');
+        }
+    }else{
         document.querySelector('#saving-amount').innerText = 0;
         document.querySelector('#remaining-balance').innerText = 0;
-    }else{
-        document.querySelector('#saving-amount').innerText = savingAmount;
-        // *remaining balance calculation
-        document.querySelector('#remaining-balance').innerText = remainingBalance;
+        displayAlert2('Please Put valid Saving Percentage');
     }
 });
 
@@ -69,8 +79,6 @@ saveButton.addEventListener('click',function(){
 function displayAlert(text) {
     alert.textContent = text;
 }
-
-
-function l(a){
-    console.log(a);
-};
+function displayAlert2(text) {
+    alert2.textContent = text;
+}
