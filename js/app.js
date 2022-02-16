@@ -34,5 +34,7 @@ saveButton.addEventListener('click',function(){
     // *saving amount calculation 
     const savingAmount = incomeInputNum * savePercentage;
     document.querySelector('#saving-amount').innerText = savingAmount;
-
+    // *remaining balance calculation
+    const remainingBalance = restValue.innerText - savingAmount;
+    document.querySelector('#remaining-balance').innerText = remainingBalance;
 });
