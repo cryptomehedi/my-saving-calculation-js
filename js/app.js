@@ -18,7 +18,14 @@ calculatorButton.addEventListener('click',function(){
     // *total cost calculation
     const totalCost = foodInputNum + rentInputNum + clothesInputNum;
     document.querySelector('#total-cost').innerText = totalCost;
-    // *rest amount 
-    const totalExpenses = incomeInputNum - totalCost;
-    restValue.innerText = totalExpenses;
+    // *rest balance 
+    const restBalance = incomeInputNum - totalCost;
+    restValue.innerText = restBalance;
+});
+
+
+saveButton.addEventListener('click',function(){
+    const incomeInputNum = parseInt(incomeInput.value) 
+    const saveInputNum = parseInt(saveInput.value);
+    savePercentage = saveInputNum / 100;
 });
