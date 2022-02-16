@@ -14,4 +14,9 @@ calculatorButton.addEventListener('click',function(){
     const foodInputNum = parseInt(foodInput.value);
     const rentInputNum = parseInt(rentInput.value);
     const clothesInputNum = parseInt(clothesInput.value);
+
+    // *total cost calculation
+    const totalCost = foodInputNum + rentInputNum + clothesInputNum;
+    document.querySelector('#total-cost').innerText = totalCost;
+    
 });
