@@ -11,7 +11,8 @@ const alert = document.querySelector('.alert-text');
 const alert2 = document.querySelector('.alert2-text');
 
 // *calculation button
-calculatorButton.addEventListener('click',function(){
+calculatorButton.addEventListener('click',function(e){
+    e.preventDefault();
     // *text to number convert
     const incomeInputNum = parseInt(incomeInput.value) ;
     const foodInputNum = parseInt(foodInput.value);
@@ -26,11 +27,17 @@ calculatorButton.addEventListener('click',function(){
         const restBalance = incomeInputNum - totalCost;
         restValue.innerText = restBalance;
         displayAlert('');
+        document.querySelector('#saving-amount').innerText = 0;
+        document.querySelector('#remaining-balance').innerText = 0;
+        displayAlert2('');
         }else{
             document.querySelector('#total-cost').innerText = 0;
             restValue.innerText = 0;
             displayAlert('Your Expenses Is More Then Your Income');
-        }
+            document.querySelector('#saving-amount').innerText = 0;
+        document.querySelector('#remaining-balance').innerText = 0;
+        displayAlert2('');
+        };
     }else if(incomeInputNum <= 0 || incomeInput.value =='' || isNaN(incomeInput.value)){
         displayAlert('Please Put Valid Income Amount.');
     }else if(foodInputNum <= 0 || foodInput.value =='' || isNaN(foodInput.value)){
@@ -42,11 +49,15 @@ calculatorButton.addEventListener('click',function(){
     }
     else{
         displayAlert('please put valid amount');
+        document.querySelector('#saving-amount').innerText = 0;
+        document.querySelector('#remaining-balance').innerText = 0;
+        displayAlert2('');
     }
 });
 
 // *saving button 
-saveButton.addEventListener('click',function(){
+saveButton.addEventListener('click',function(e){
+    e.preventDefault();
     // *text to number convert
     const incomeInputNum = parseInt(incomeInput.value) 
     const saveInputNum = parseInt(saveInput.value);
