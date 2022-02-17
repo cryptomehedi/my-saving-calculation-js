@@ -13,7 +13,7 @@ const alert2 = element('.alert2-text');
 // *call element function
 function element(param){
     return document.querySelector(param);
-}
+};
 
 // *calculation button
 calculatorButton.addEventListener('click',function(e){
@@ -77,7 +77,7 @@ saveButton.addEventListener('click',function(e){
     e.preventDefault();
 
     // *text to number convert
-    const incomeInputNum = parseInt(incomeInput.value) 
+    const incomeInputNum = parseInt(incomeInput.value);
     const saveInputNum = parseInt(saveInput.value);
     const restValueNum = parseInt(restValue.innerText);
 
@@ -101,20 +101,20 @@ saveButton.addEventListener('click',function(e){
 
         if( remainingBalance < 0 ){
             displayAlert2('Your Remaining Balance is Less then Your Saving Balance');
-            savingCalculation();}
-        else if( restValueNum == 0 ){
+            savingCalculation();
+        }else if( restValueNum == 0 ){
             displayAlert2("You Don't Have Enough Money For Saving");
             document.querySelector('#saving-amount').innerText = 0;
             document.querySelector('#remaining-balance').innerText = 0;
         }else {
             savingCalculation();
             displayAlert2('');
-        }
+        };
     }else if (restValue.innerText){
         document.querySelector('#saving-amount').innerText = 0;
         document.querySelector('#remaining-balance').innerText = 0;
         displayAlert2('Please Put valid Saving Percentage');
-    }
+    };
 });
 
 // * display alert 
