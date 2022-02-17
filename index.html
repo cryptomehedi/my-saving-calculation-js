@@ -11,46 +11,50 @@
     <header>
         <h1 class="text-5xl text-center my-5">My Saving Calculation</h1>
     </header>
-    <main class="container mx-auto bg-gray-200 ">
-        <section class="grid sm:grid-cols-1 md:grid-cols-2 gap-5">
-            <div class="">
-                <img src="./img/photo.jpg" alt="" srcset="">
+    <main class="container mx-auto bg-gray-200">
+        <section class="grid  md:grid-cols-2 gap-5">
+            <div class="p-4 shadow-lg rounded-xl">
+                <div class="p-5 bg-slate-100  rounded-xl">
+                    <img class="h-fit" src="./img/photo.jpg" alt="" srcset="">
+                </div>
             </div>
-            <div class="">
-                <div class="text-center">
-                    <p>Income</p>
-                    <div>
-                        <label for="income">Income:</label>
-                        <input type="text" name="income" id="income-input">
-                    </div>
-                    <p>Expenses</p>
-                    <div>
-                        <label for="food">Food:</label>
-                        <input type="text" name="food" id="food-input">
-                    </div>
-                    <div>
-                        <label for="rent">Rent</label>
-                        <input type="text" name="rent" id="rent-input">
-                    </div>
-                    <div>
-                        <label for="clothes">Clothes:</label>
-                        <input type="text" name="clothes" id="clothes-input">
-                    </div>
-                    <button id="calculator-button" class="bg-sky-600 hover:bg-sky-700">Calculator</button>
-                    <p class="alert-text"></p>
-                    <p>Total Expenses: <span id="total-cost">0</span></p>
-                    <p>Balance: <span id="rest-balance">0</span></p>
-                    <div>
-                        <div class="">
-                            <label for="save">Save:</label>
-                            <input type="text" name="save" id="save-input">
-                            <p>%</p>
-                            <button id="save-button" class="bg-sky-600 hover:bg-sky-700" >Save</button>
+            <div class="p-4  shadow-lg rounded-xl">
+                <div class="p-5 bg-slate-300  rounded-xl">
+                    <div class="text-center md:pt-16 md:pb-12">
+                        <p>Income</p><br>
+                        <div>
+                            <label for="income">Income: </label>
+                            <input type="text" name="income" id="income-input">
+                        </div><br>
+                        <p>Expenses</p><br>
+                        <div>
+                            <label for="food">Food: </label>
+                            <input type="text" name="food" id="food-input">
+                        </div><br>
+                        <div>
+                            <label for="rent">Rent: </label>
+                            <input type="text" name="rent" id="rent-input">
+                        </div><br>
+                        <div>
+                            <label for="clothes">Clothes: </label>
+                            <input type="text" name="clothes" id="clothes-input">
+                        </div><br>
+                        <button id="calculator-button" class="uppercase py-1 px-5 text-white font-semibold rounded-xl bg-sky-600 hover:bg-sky-700">Calculator</button><br>
+                        <p class="alert-text text-red-500 pt-2 font-semibold"></p>
+                        <p>Total Expenses: <span id="total-cost">0</span></p>
+                        <p>Balance: <span id="rest-balance">0</span></p><br>
+                        <div>
+                            <div class="flex justify-center items-center ">
+                                <label class="pr-2" for="save">Save: </label>
+                                <input type="text" name="save" id="save-input">
+                                <p class="px-2">%</p><br>
+                                <button id="save-button" class="uppercase py-1 px-5 text-white font-semibold rounded-xl bg-sky-600 hover:bg-sky-700" >Save</button>
+                            </div><br>
                         </div>
+                        <p>Saving Amount: <span id="saving-amount">0</span> </p>
+                        <p>Remaining Balance: <span id="remaining-balance">0</span> </p>
+                        <p class="alert2-text text-red-500 pt-2 font-semibold"></p>
                     </div>
-                    <p>Saving Amount: <span id="saving-amount">0</span> </p>
-                    <p>Remaining Balance: <span id="remaining-balance">0</span> </p>
-                    <p class="alert2-text"></p>
                 </div>
             </div>
         </section>

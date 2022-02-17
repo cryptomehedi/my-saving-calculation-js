@@ -32,13 +32,13 @@ calculatorButton.addEventListener('click',function(){
             displayAlert('Your Expenses Is More Then Your Income');
         }
     }else if(incomeInputNum <= 0 || incomeInput.value =='' || isNaN(incomeInput.value)){
-        displayAlert('please put valid Income amount');
+        displayAlert('Please Put Valid Income Amount.');
     }else if(foodInputNum <= 0 || foodInput.value =='' || isNaN(foodInput.value)){
-        displayAlert('please put valid Food amount');
+        displayAlert('Please Put Valid Food Amount.');
     }else if(rentInputNum<= 0 || rentInput.value =='' || isNaN(rentInput.value)){
-        displayAlert('please put valid Rent amount');
+        displayAlert('Please Put Valid Rent Amount.');
     }else if(clothesInputNum <= 0 || clothesInput.value =='' || isNaN(clothesInput.value)){
-        displayAlert('please put valid Cloth amount');
+        displayAlert('Please Put Valid Clothes Amount.');
     }
     else{
         displayAlert('please put valid amount');
