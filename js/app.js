@@ -73,7 +73,7 @@ saveButton.addEventListener('click',function(e){
     // *text to number convert
     const incomeInputNum = parseInt(incomeInput.value) 
     const saveInputNum = parseInt(saveInput.value);
-    if(saveInputNum >= 0 || isNaN(saveInput.value)){
+    if(saveInputNum >= 0){
         // *percentage calculation
         savePercentage = saveInputNum / 100;
         // *saving amount calculation 
@@ -85,7 +85,13 @@ saveButton.addEventListener('click',function(e){
             document.querySelector('#saving-amount').innerText = savingAmount;
             
             document.querySelector('#remaining-balance').innerText = remainingBalance;
-        }else{
+        }else if(!isNaN(saveInput.value)){
+            document.querySelector('#saving-amount').innerText = 0;
+            // *remaining balance calculation
+            document.querySelector('#remaining-balance').innerText = 0;
+            displayAlert2('Please Complete Your Calculation');
+        }
+        else {
             document.querySelector('#saving-amount').innerText = savingAmount;
             // *remaining balance calculation
             document.querySelector('#remaining-balance').innerText = remainingBalance;
