@@ -35,17 +35,29 @@ calculatorButton.addEventListener('click',function(e){
             restValue.innerText = 0;
             displayAlert('Your Expenses Is More Then Your Income');
             document.querySelector('#saving-amount').innerText = 0;
-        document.querySelector('#remaining-balance').innerText = 0;
-        displayAlert2('');
+            document.querySelector('#remaining-balance').innerText = 0;
+            displayAlert2('');
         };
     }else if(incomeInputNum <= 0 || incomeInput.value =='' || isNaN(incomeInput.value)){
         displayAlert('Please Put Valid Income Amount.');
+        document.querySelector('#saving-amount').innerText = 0;
+        document.querySelector('#remaining-balance').innerText = 0;
+        displayAlert2('');
     }else if(foodInputNum <= 0 || foodInput.value =='' || isNaN(foodInput.value)){
         displayAlert('Please Put Valid Food Amount.');
+        document.querySelector('#saving-amount').innerText = 0;
+        document.querySelector('#remaining-balance').innerText = 0;
+        displayAlert2('');
     }else if(rentInputNum<= 0 || rentInput.value =='' || isNaN(rentInput.value)){
         displayAlert('Please Put Valid Rent Amount.');
+        document.querySelector('#saving-amount').innerText = 0;
+        document.querySelector('#remaining-balance').innerText = 0;
+        displayAlert2('');
     }else if(clothesInputNum <= 0 || clothesInput.value =='' || isNaN(clothesInput.value)){
         displayAlert('Please Put Valid Clothes Amount.');
+        document.querySelector('#saving-amount').innerText = 0;
+        document.querySelector('#remaining-balance').innerText = 0;
+        displayAlert2('');
     }
     else{
         displayAlert('please put valid amount');
@@ -61,7 +73,7 @@ saveButton.addEventListener('click',function(e){
     // *text to number convert
     const incomeInputNum = parseInt(incomeInput.value) 
     const saveInputNum = parseInt(saveInput.value);
-    if(saveInputNum >= 0){
+    if(saveInputNum >= 0 || isNaN(saveInput.value)){
         // *percentage calculation
         savePercentage = saveInputNum / 100;
         // *saving amount calculation 
